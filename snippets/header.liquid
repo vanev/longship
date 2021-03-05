@@ -1,0 +1,50 @@
+<header class="Header">
+  <input class="Header-MenuToggle" id="header_menu_toggle" type="checkbox" />
+  <label class="Header-MenuButton" for="header_menu_toggle">Menu</label>
+
+  <nav class="Header-Menus">
+    <div class="Header-MainMenu _left">
+      {% for link in linklists.header-left.links %}
+        {% assign submenu_handle = link.title | handleize %}
+
+        {% if linklists[submenu_handle].links != blank %}
+          <div href="{{ link.url }}" class="Header-MainMenu-Item _submenu">
+            <input
+              type="checkbox"
+              class="Header-MainMenu-SubmenuToggle"
+              id="header_submenu_{{ submenu_handle }}_toggle"
+            />
+
+            <label class="Header-MainMenu-SubmenuLabel" for="header_submenu_{{ submenu_handle }}_toggle">
+              {{ link.title | escape }}
+            </label>
+
+            <div class="Header-MainMenu-Submenu">
+              {% for childlink in linklists[submenu_handle].links %}
+                <a href="{{ childlink.url }}" class="Header-MainMenu-Submenu-Item">
+                  {{ childlink.title | escape }}
+                </a>
+              {% endfor %}
+            </div>
+          </div>
+        {% else %}
+          <a href="{{ link.url }}" class="Header-MainMenu-Item">
+            {{ link.title | escape }}
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="Header-MainMenu _right">
+      {% for link in linklists.header-right.links %}
+        <a href="{{ link.url }}" class="Header-MainMenu-Item">
+          {{ link.title | escape }}
+        </a>
+      {% endfor %}
+    </div>
+  </nav>
+
+  <a href="/" class="Header-Logo">
+    <img src="{{ settings.header_logo | img_url: 'master' }}" class="Header-Logo-Image" />
+  </a>
+</header>

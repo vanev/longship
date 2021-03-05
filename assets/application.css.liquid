@@ -1,2 +1,220 @@
-// Put your styles in this file.
-// Note: "@import" rules aren’t supported.
+:root {
+  --white: #f9f4e6;
+  --black: #000000;
+}
+
+body {
+  background-color: var(--white);
+  padding: 70px 0 0;
+  margin: 0;
+}
+
+/**
+ * Header
+ */
+
+.Header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--black);
+}
+
+.Header-MenuToggle {
+  display: none;
+}
+
+.Header-MenuButton {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  appearance: none;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  border-radius: 0;
+  color: transparent;
+  cursor: pointer;
+}
+.Header-MenuButton:before,
+.Header-MenuButton:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 36px;
+  height: 1px;
+  background: var(--black);
+  transition: all 100ms ease;
+}
+.Header-MenuButton:before {
+  top: 33.333333%;
+  left: 2px;
+}
+.Header-MenuButton:after {
+  top: 66.666667%;
+  left: 2px;
+}
+.Header-MenuToggle:checked ~ .Header-MenuButton:before {
+  top: 50%;
+  left: 2px;
+  transform: rotate(45deg);
+}
+.Header-MenuToggle:checked ~ .Header-MenuButton:after {
+  top: 50%;
+  right: 2px;
+  transform: rotate(-45deg);
+}
+
+.Header-Menus {
+  position: absolute;
+  top: 71px;
+  left: 0;
+  z-index: 1;
+  display: none;
+  width: 100%;
+  background-color: var(--white);
+  padding: 30px 20px;
+  box-sizing: border-box;
+}
+.Header-MenuToggle:checked ~ .Header-Menus {
+  display: block;
+}
+
+.Header-MainMenu {
+}
+.Header-MainMenu + .Header-MainMenu {
+  margin-top: 30px;
+}
+
+.Header-MainMenu._left {
+}
+
+.Header-MainMenu._right {
+}
+
+.Header-MainMenu-Item {
+  display: block;
+  font-family: "Helvetica";
+  font-size: 22px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--black);
+}
+.Header-MainMenu-Item + .Header-MainMenu-Item {
+  margin-top: 30px;
+}
+
+.Header-MainMenu-SubmenuToggle {
+  display: none;
+}
+
+.Header-MainMenu-SubmenuLabel {
+  cursor: pointer;
+}
+
+.Header-MainMenu-Submenu {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  padding: 30px 20px 30px 0;
+  box-sizing: border-box;
+}
+.Header-MainMenu-SubmenuToggle:checked ~ .Header-MainMenu-Submenu {
+  display: block;
+}
+
+.Header-MainMenu-Submenu-Item {
+  display: block;
+  font-family: serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--black);
+}
+.Header-MainMenu-Submenu-Item + .Header-MainMenu-Submenu-Item {
+  margin-top: 20px;
+}
+
+.Header-Logo {
+  display: block;
+  z-index: 2;
+  height: 30px;
+}
+.Header-Logo-Image {
+  display: block;
+  height: 100%;
+}
+
+@media (min-width: 700px) {
+  .Header-MenuButton {
+    display: none;
+  }
+
+  .Header-Menus {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    padding: 0 50px;
+    height: 100%;
+    background-color: transparent;
+  }
+
+  .Header-MainMenu {
+    top: 0;
+    display: flex;
+  }
+  .Header-MainMenu + .Header-MainMenu {
+    margin-top: 0;
+  }
+  .Header-MainMenu._left {
+    left: 0;
+  }
+  .Header-MainMenu._right {
+    right: 0;
+  }
+
+  .Header-MainMenu-Item {
+    font-size: 14px;
+  }
+
+  .Header-MainMenu-Item + .Header-MainMenu-Item {
+    margin-top: 0;
+    margin-left: 30px;
+  }
+
+  .Header-MainMenu-Submenu {
+    display: none;
+    position: absolute;
+    top: 81px;
+    left: 0;
+    right: unset;
+    width: 330px;
+    padding: 0;
+    background-color: var(--white);
+  }
+
+  .Header-MainMenu-Submenu-Item {
+    padding: 30px 50px;
+    font-size: 16px;
+  }
+  .Header-MainMenu-Submenu-Item:hover {
+    font-style: italic;
+  }
+  .Header-MainMenu-Submenu-Item + .Header-MainMenu-Submenu-Item {
+    margin-top: 0;
+    border-top: 1px solid var(--black);
+  }
+
+  .Header-Logo {
+    height: 40px;
+  }
+}
