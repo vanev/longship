@@ -1,0 +1,5 @@
+@mixin largerThan($size) {
+  @media (min-width: #{$size + 1}) {
+    @content;
+  }
+}

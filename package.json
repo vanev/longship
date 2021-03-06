@@ -1,0 +1,17 @@
+{
+  "name": "longship",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Evan Siegel <siegel.evan@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "concurrently -c 'white' 'npm:*:watch'",
+    "sass:build": "sass ./assets/application.scss ./assets/application.css.liquid --no-source-map",
+    "sass:watch": "yarn sass:build --watch",
+    "theme:watch": "theme watch --allow-live"
+  },
+  "devDependencies": {
+    "concurrently": "^6.0.0",
+    "sass": "^1.32.8"
+  }
+}
