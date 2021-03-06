@@ -6,15 +6,5 @@
     "theme_author": "Evan Siegel",
     "theme_documentation_url": "https://github.com/vanev/longship",
     "theme_support_url": "https://github.com/vanev/longship/issues"
-  },
-  {
-    "name": "Header",
-    "settings": [
-      {
-        "type": "image_picker",
-        "id": "header_logo",
-        "label": "Logo Image"
-      }
-    ]
   }
 ]
