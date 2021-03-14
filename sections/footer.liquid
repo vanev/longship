@@ -1,0 +1,61 @@
+<div class="Footer-Ticker">
+  <div class="Footer-Ticker-Frame">
+    {% for i in (1..10) %}
+      {% if i == 1 %}
+        {% assign hidden = "false" %}
+      {% else %}
+        {% assign hidden = "true" %}
+      {% endif %}
+
+      <img
+        class="Footer-Ticker-Icon"
+        src="{{ section.settings.ticker_icon | image_url }}"
+        aria-hidden="{{ hidden }}"
+      />
+
+      <a
+        href="{{ section.settings.ticker_url }}"
+        class="Footer-Ticker-Link"
+        aria-hidden="{{ hidden }}"
+      >
+        {{ section.settings.ticker_message | escape }}
+      </a>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="Footer-Menu">
+  <span class="Footer-Menu-Item">&#169; {{ shop.name }} {{ "now" | date: "%Y" }}</span>
+
+  {% for link in linklists.footer.links %}
+    <a href="{{ link.url }}" class="Footer-Menu-Item">
+      {{ link.title | escape }}
+    </a>
+  {% endfor %}
+</div>
+
+{% schema %}
+  {
+    "name": "Footer",
+    "class": "Footer",
+    "tag": "footer",
+    "settings": [
+      {
+        "type": "url",
+        "id": "ticker_url",
+        "label": "Ticker URL"
+      },
+      {
+        "type": "text",
+        "id": "ticker_message",
+        "label": "Ticker Message",
+        "placeholder": "Follow @TestBrand"
+      },
+      {
+        "type": "image_picker",
+        "id": "ticker_icon",
+        "label": "Ticker Icon"
+      }
+    ]
+  }
+{% endschema %}

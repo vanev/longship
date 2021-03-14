@@ -1,0 +1,73 @@
+.Footer {
+  &-Ticker {
+    position: relative;
+    height: 80px;
+    width: 100vw;
+    background-color: var(--purple);
+    overflow: hidden;
+    --offset: 20vw;
+    --move-initial: calc(-10% + var(--offset));
+    --move-final: calc(-50% + var(--offset));
+
+    &-Frame {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      padding: 20px;
+      height: 100%;
+      transform: translateX(var(--move-initial));
+      animation: marquee 40s linear infinite;
+    }
+
+    &-Link {
+      font-family: serif;
+      font-size: 27px;
+      text-transform: uppercase;
+      color: white;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    &-Link + &-Icon {
+      margin-left: 30px;
+    }
+
+    &-Icon {
+      height: 36px;
+    }
+    &-Icon + &-Link {
+      margin-left: 30px;
+    }
+  }
+
+  &-Menu {
+    display: flex;
+    justify-content: center;
+    padding: 13px 0;
+    background-color: var(--white);
+
+    &-Item {
+      font-size: 10px;
+      font-family: sans-serif;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--black);
+    }
+
+    &-Item + &-Item {
+      margin-left: 40px;
+    }
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(var(--move-initial));
+  }
+
+  100% {
+    transform: translateX(var(--move-final));
+  }
+}
