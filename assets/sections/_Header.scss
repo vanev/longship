@@ -112,7 +112,7 @@
 
     &-Item {
       display: block;
-      font-family: "Helvetica";
+      font-family: var(--type-sans-serif);
       font-size: 22px;
       text-transform: uppercase;
       text-decoration: none;
@@ -159,7 +159,7 @@
 
       &-Item {
         display: block;
-        font-family: serif;
+        font-family: var(--type-serif);
         font-size: 14px;
         text-transform: uppercase;
         text-decoration: none;
