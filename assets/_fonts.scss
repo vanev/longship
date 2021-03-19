@@ -1,0 +1,34 @@
+@font-face {
+  font-family: "GT America";
+  src: url('{{ "gt-america-extended-regular.woff2" | asset_url }}')
+      format("woff2"),
+    url('{{ "gt-america-extended-regular.woff" | asset_url }}') format("woff");
+}
+
+@font-face {
+  font-family: "gc16";
+  src: url('{{ "gc16-mono.woff2" | asset_url }}') format("woff2"),
+    url('{{ "gc16-mono.woff" | asset_url }}') format("woff");
+}
+
+@font-face {
+  font-family: "gc16";
+  src: url('{{ "gc16-mono-italic.woff2" | asset_url }}') format("woff2"),
+    url('{{ "gc16-mono-italic.woff" | asset_url }}') format("woff");
+  font-style: "italic";
+}
+
+@font-face {
+  font-family: "gc16";
+  src: url('{{ "gc16-semibold.woff2" | asset_url }}') format("woff2"),
+    url('{{ "gc16-semibold.woff" | asset_url }}') format("woff");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "gc16";
+  src: url('{{ "gc16-semibold-italic.woff2" | asset_url }}') format("woff2"),
+    url('{{ "gc16-semibold-italic.woff" | asset_url }}') format("woff");
+  font-weight: 600;
+  font-style: "italic";
+}
