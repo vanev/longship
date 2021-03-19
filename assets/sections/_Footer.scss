@@ -1,13 +1,20 @@
+@import "../mediaQueries";
+
 .Footer {
   &-Ticker {
+    display: none;
     position: relative;
-    height: 80px;
+    height: 74px;
     width: 100vw;
     background-color: var(--purple);
     overflow: hidden;
     --offset: 20vw;
     --move-initial: calc(-10% + var(--offset));
     --move-final: calc(-50% + var(--offset));
+
+    @include largerThan(700px) {
+      display: block;
+    }
 
     &-Frame {
       position: absolute;
@@ -23,8 +30,11 @@
     }
 
     &-Link {
+      padding-top: 7px;
       font-family: var(--type-serif);
       font-size: 27px;
+      font-weight: 400;
+      letter-spacing: -0.02em;
       text-transform: uppercase;
       color: white;
       text-decoration: none;
@@ -46,14 +56,23 @@
     display: flex;
     justify-content: center;
     padding: 13px 0;
-    background-color: var(--white);
+    background-color: var(--purple);
+
+    @include largerThan(700px) {
+      background-color: var(--white);
+    }
 
     &-Item {
       font-size: 10px;
       font-family: var(--type-sans-serif);
+      letter-spacing: 0.05em;
       text-transform: uppercase;
       text-decoration: none;
-      color: var(--black);
+      color: var(--white);
+
+      @include largerThan(700px) {
+        color: var(--black);
+      }
     }
 
     &-Item + &-Item {
