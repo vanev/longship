@@ -114,12 +114,14 @@
       display: block;
       font-family: var(--type-sans-serif);
       font-size: 22px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       text-decoration: none;
       color: var(--black);
 
       @include largerThan(700px) {
-        font-size: 14px;
+        font-size: 13px;
       }
     }
     &-Item + &-Item {
@@ -127,7 +129,7 @@
 
       @include largerThan(700px) {
         margin-top: 0;
-        margin-left: 30px;
+        margin-left: 22px;
       }
     }
 
@@ -160,7 +162,9 @@
       &-Item {
         display: block;
         font-family: var(--type-serif);
-        font-size: 14px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
         text-transform: uppercase;
         text-decoration: none;
         color: var(--black);
@@ -168,9 +172,12 @@
         @include largerThan(700px) {
           padding: 30px 50px;
           font-size: 16px;
+          font-weight: 400;
+          letter-spacing: 0;
 
           &:hover {
             font-style: italic;
+            font-weight: 600;
           }
         }
       }
