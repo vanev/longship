@@ -12,7 +12,7 @@
     --move-initial: calc(-10% + var(--offset));
     --move-final: calc(-50% + var(--offset));
 
-    @include largerThan(700px) {
+    @include largerThan($mq-small) {
       display: block;
     }
 
@@ -58,7 +58,7 @@
     padding: 13px 0;
     background-color: var(--purple);
 
-    @include largerThan(700px) {
+    @include largerThan($mq-small) {
       background-color: var(--white);
     }
 
@@ -70,7 +70,7 @@
       text-decoration: none;
       color: var(--white);
 
-      @include largerThan(700px) {
+      @include largerThan($mq-small) {
         color: var(--black);
       }
     }

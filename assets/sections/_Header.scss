@@ -28,7 +28,7 @@
     color: transparent;
     cursor: pointer;
 
-    @include largerThan(700px) {
+    @include largerThan($mq-small) {
       display: none;
     }
 
@@ -78,7 +78,7 @@
     padding: 30px 20px;
     box-sizing: border-box;
 
-    @include largerThan(700px) {
+    @include largerThan($mq-small) {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -93,19 +93,19 @@
   }
 
   &-MainMenu {
-    @include largerThan(700px) {
+    @include largerThan($mq-small) {
       top: 0;
       display: flex;
     }
 
     &._left {
-      @include largerThan(700px) {
+      @include largerThan($mq-small) {
         left: 0;
       }
     }
 
     &._right {
-      @include largerThan(700px) {
+      @include largerThan($mq-small) {
         right: 0;
       }
     }
@@ -120,14 +120,14 @@
       text-decoration: none;
       color: var(--black);
 
-      @include largerThan(700px) {
+      @include largerThan($mq-small) {
         font-size: 13px;
       }
     }
     &-Item + &-Item {
       margin-top: 30px;
 
-      @include largerThan(700px) {
+      @include largerThan($mq-small) {
         margin-top: 0;
         margin-left: 22px;
       }
@@ -150,7 +150,7 @@
       padding: 30px 20px 30px 0;
       box-sizing: border-box;
 
-      @include largerThan(700px) {
+      @include largerThan($mq-small) {
         top: 81px;
         left: 0;
         right: unset;
@@ -169,7 +169,7 @@
         text-decoration: none;
         color: var(--black);
 
-        @include largerThan(700px) {
+        @include largerThan($mq-small) {
           padding: 30px 50px;
           font-size: 16px;
           font-weight: 400;
@@ -184,7 +184,7 @@
       &-Item + &-Item {
         margin-top: 20px;
 
-        @include largerThan(700px) {
+        @include largerThan($mq-small) {
           margin-top: 0;
           border-top: 1px solid var(--black);
         }
@@ -197,7 +197,7 @@
   &-MainMenu + &-MainMenu {
     margin-top: 30px;
 
-    @include largerThan(700px) {
+    @include largerThan($mq-small) {
       margin-top: 0;
     }
   }
@@ -207,7 +207,7 @@
     z-index: 2;
     height: 30px;
 
-    @include largerThan(700px) {
+    @include largerThan($mq-small) {
       height: 40px;
     }
 
