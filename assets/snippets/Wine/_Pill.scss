@@ -1,0 +1,22 @@
+@import "../../mediaQueries";
+
+.Wine-Pill {
+  display: block;
+  width: 100%;
+  max-width: 60vw;
+  height: 75vw;
+  margin: 0 auto;
+  border-radius: 180px;
+  object-fit: cover;
+  box-shadow: 0 0 0 transparent;
+  transition: box-shadow 250ms ease;
+
+  @include largerThan($mq-small) {
+    max-width: 355px;
+    max-height: 440px;
+  }
+
+  &:hover {
+    box-shadow: 0 4px 73px var(--image-hover-color);
+  }
+}

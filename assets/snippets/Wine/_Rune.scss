@@ -1,0 +1,12 @@
+@import "../../mediaQueries";
+
+.Wine-Rune {
+  display: block;
+  width: 25px;
+  height: 25px;
+
+  @include largerThan($mq-small) {
+    width: 38px;
+    height: 38px;
+  }
+}

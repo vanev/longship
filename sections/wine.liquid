@@ -1,0 +1,146 @@
+<style>
+  #shopify-section-{{ section.id }} {
+    --background-color: {{ section.settings.background }};
+    --image-hover-color: {{ section.settings.image_hover_shadow }};
+  }
+</style>
+
+<input data-attr="selector" type="hidden" value="#shopify-section-{{ section.id }}" />
+<input data-attr="background" type="hidden" value="{{ section.settings.background }}" />
+
+<div class="Wine-Container _primary">
+  {% render "wine_label", section: section %}
+
+  {% render "wine_image",
+    url: section.settings.image_2,
+    credit_name: "",
+    credit_link: "" %}
+
+  {% render "wine_carousel", section: section %}
+
+  {% render "wine_description", section: section %}
+</div>
+
+<div class="Wine-Container _secondary">
+  <img class="Wine-Pill" src="{{ section.settings.pill_image | image_url }}" />
+
+  {% render "wine_details", section: section %}
+
+  {% render "wine_image",
+    url: section.settings.image_1,
+    credit_name: section.settings.image_credit_name,
+    credit_link: section.settings.image_credit_link %}
+</div>
+
+{% schema %}
+  {
+    "name": "Wine",
+    "class": "Wine",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Details",
+        "info": "Information about the wine."
+      },
+      {
+        "type": "text",
+        "id": "name",
+        "label": "Name",
+        "placeholder": "My Good Wine"
+      },
+      {
+        "type": "image_picker",
+        "id": "rune",
+        "label": "Rune"
+      },
+      {
+        "type": "color",
+        "id": "background",
+        "label": "Background Color",
+        "info": "This will be the background color that will fade into the next section."
+      },
+      {
+        "type": "text",
+        "id": "years",
+        "label": "Years",
+        "info": "A list of years, separated by commas.",
+        "placeholder": "2010, 2011, 2012"
+      },
+      {
+        "type": "text",
+        "id": "winemaker",
+        "label": "Winemaker",
+        "placeholder": "David Grapes, Grapes's Wine Company"
+      },
+      {
+        "type": "text",
+        "id": "appalation",
+        "label": "Appalation",
+        "placeholder": "Staten Island, New York"
+      },
+      {
+        "type": "text",
+        "id": "varietal",
+        "label": "Varietal",
+        "placeholder": "85% water from the Hudson, 15% stuff I got from my cousin"
+      },
+      {
+        "type": "text",
+        "id": "cultivation",
+        "label": "Cultivation",
+        "placeholder": "Certified Good Enough / 25% ABV"
+      },
+      {
+        "type": "textarea",
+        "id": "description",
+        "label": "Description"
+      },
+      {
+        "type": "header",
+        "content": "Images",
+        "info": "See the information below to understand where each image goes."
+      },
+      {
+        "type": "image_picker",
+        "id": "image_1",
+        "label": "First Image",
+        "info": "This is the first image in the carousel and the top-most image, next to the name, on desktop."
+      },
+      {
+        "type": "image_picker",
+        "id": "image_2",
+        "label": "Second Image",
+        "info": "This is the second image in the carousel and the image below the name on desktop."
+      },
+      {
+        "type": "image_picker",
+        "id": "pill_image",
+        "label": "Pill Image",
+        "info": "This is the pill image with rounded corners."
+      },
+      {
+        "type": "color",
+        "id": "image_hover_shadow",
+        "label": "Image Hover Shadow Color",
+        "info": "This is the color of the box shadow that appears when hovering an image with a mouse."
+      },
+      {
+        "type": "text",
+        "id": "image_credit_name",
+        "label": "Image Credit Name",
+        "info": "Optional"
+      },
+      {
+        "type": "text",
+        "id": "image_credit_link",
+        "label": "Image Credit Link",
+        "info": "Optional"
+      }
+    ],
+    "presets": [{
+      "name": "Wine",
+      "category": "Wine"
+    }]
+  }
+{% endschema %}

@@ -1,0 +1,37 @@
+@import "../../mediaQueries";
+
+.Wine-Description {
+  padding: 0 10%;
+
+  &-Rune {
+    @include largerThan($mq-small) {
+      display: none;
+    }
+  }
+
+  &-Rune + &-Text {
+    margin-top: 40px;
+
+    @include largerThan($mq-small) {
+      margin-top: 130px;
+    }
+  }
+
+  &-Text {
+    font-family: var(--type-serif);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.366667;
+    color: var(--black);
+    text-align: left;
+
+    @include largerThan($mq-small) {
+      font-size: 15px;
+      text-align: center;
+    }
+  }
+
+  &-Text + &-Action {
+    margin-top: 20px;
+  }
+}

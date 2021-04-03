@@ -1,0 +1,7 @@
+{% assign years = section.settings.years | split: "," %}
+
+<p class="Wine-Years {{ className }}">
+  {% for year in years %}
+    <span class="Wine-Years-Year">{{ year | strip }}</span>
+  {% endfor %}
+</p>

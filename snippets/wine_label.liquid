@@ -1,0 +1,7 @@
+<div class="Wine-Label">
+  <img class="Wine-Rune Wine-Label-Rune" src="{{ section.settings.rune | image_url }}" />
+
+  <p class="Wine-Name Wine-Label-Name">{{ section.settings.name }}</p>
+
+  {% render "wine_years", section: section, className: "Wine-Label-Years" %}
+</div>

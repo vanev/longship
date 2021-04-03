@@ -1,0 +1,50 @@
+@import "../../mediaQueries";
+
+.Wine-Image {
+  display: none;
+
+  @include largerThan($mq-small) {
+    display: block;
+  }
+
+  &-Image {
+    max-width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: (0 0 0 transparent);
+    transition: box-shadow 250ms ease;
+
+    @include largerThan($mq-small) {
+      height: 600px;
+    }
+
+    &:hover {
+      box-shadow: 0 4px 73px var(--image-hover-color);
+    }
+  }
+
+  &-Image + &-Credit {
+    margin-top: 20px;
+  }
+
+  &-Credit {
+    display: none;
+    text-align: center;
+
+    @include largerThan($mq-small) {
+      display: block;
+    }
+
+    &-Label {
+      font-family: var(--type-sans-serif);
+      font-size: 10px;
+      text-transform: uppercase;
+    }
+
+    &-Name {
+      font-family: var(--type-serif);
+      font-size: 10px;
+      color: inherit;
+    }
+  }
+}

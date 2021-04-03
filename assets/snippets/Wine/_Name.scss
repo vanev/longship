@@ -1,0 +1,12 @@
+.Wine-Name {
+  padding: 0 10%;
+  font-family: var(--type-serif);
+  font-size: 22px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+
+  @include largerThan($mq-small) {
+    font-size: 31px;
+  }
+}

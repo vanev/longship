@@ -1,0 +1,19 @@
+<div class="Wine-Image">
+  <img class="Wine-Image-Image" src="{{ url | image_url }}" />
+
+  {% if credit_name != "" %}
+    <p class="Wine-Image-Credit">
+      <span class="Wine-Image-Credit-Label">Photo:</span>
+
+      {% if credit_link != "" %}
+        <a class="Wine-Image-Credit-Name" href="{{ credit_link }}">
+          {{ credit_name }}
+        </a>
+      {% else %}
+        <span class="Wine-Image-Credit-Name">
+          {{ credit_name }}
+        </span>
+      {% endif %}
+    </p>
+  {% endif %}
+</div>

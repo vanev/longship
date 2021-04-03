@@ -1,0 +1,23 @@
+@import "../../mediaQueries";
+
+.Wine-Years {
+  display: flex;
+  justify-content: center;
+  padding: 0 10%;
+
+  &-Year {
+    font-family: var(--type-serif);
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    @include largerThan($mq-small) {
+      font-size: 31px;
+    }
+  }
+  &-Year + &-Year {
+    padding-left: 20px;
+    border-left: 1px solid var(--black);
+    margin-left: 20px;
+  }
+}
