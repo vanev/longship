@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "concurrently -c 'white' 'npm:*:watch'",
-    "sass:build": "sass ./assets/application.scss ./assets/application.css.liquid --no-source-map",
+    "sass:build": "sass ./assets/styles/application.scss ./assets/application.css.liquid --no-source-map",
     "sass:watch": "yarn sass:build --watch",
     "theme:watch": "theme watch --allow-live"
   },
