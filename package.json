@@ -1,17 +1,33 @@
 {
   "name": "longship",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./assets/application.js",
   "author": "Evan Siegel <siegel.evan@gmail.com>",
   "license": "MIT",
   "scripts": {
     "dev": "concurrently -c 'white' 'npm:*:watch'",
     "sass:build": "sass ./assets/styles/application.scss ./assets/application.css.liquid --no-source-map",
     "sass:watch": "yarn sass:build --watch",
-    "theme:watch": "theme watch --allow-live"
+    "theme:watch": "theme watch --allow-live",
+    "scripts:build": "parcel build ./assets/scripts/application.ts",
+    "scripts:watch": "parcel watch ./assets/scripts/application.ts"
   },
   "devDependencies": {
+    "@types/chroma-js": "^2.1.3",
     "concurrently": "^6.0.0",
-    "sass": "^1.32.8"
+    "parcel": "^2.0.0-beta.2",
+    "sass": "^1.32.8",
+    "typescript": "^4.2.3"
+  },
+  "dependencies": {
+    "chroma-js": "^2.1.1"
+  },
+  "targets": {
+    "main": {
+      "includeNodeModules": true,
+      "engines": {
+        "browsers": "> 0.25%"
+      }
+    }
   }
 }
