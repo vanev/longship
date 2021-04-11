@@ -1,13 +1,20 @@
-<div class="Wine-Carousel" data-carousel="wine_pics">
-  <img
-    class="Wine-Carousel-Item _currentSlide"
-    src="{{ section.settings.image_1 | image_url }}"
-    data-carousel-item="wine_pics"
-  />
+<div class="Wine-Carousel" data-carousel>
+  <div class="Wine-Carousel-Frame" data-carousel-frame>
+    <img
+      class="Wine-Carousel-Item _current"
+      src="{{ section.settings.image_1 | image_url }}"
+      data-carousel-item
+    />
 
-  <img
-    class="Wine-Carousel-Item"
-    src="{{ section.settings.image_2 | image_url }}"
-    data-carousel-item="wine_pics"
-  />
+    <img
+      class="Wine-Carousel-Item"
+      src="{{ section.settings.image_2 | image_url }}"
+      data-carousel-item
+    />
+  </div>
+
+  <div class="Wine-Carousel-Dots" data-carousel-dots>
+    <span class="Wine-Carousel-Dot _current" data-carousel-dot></span>
+    <span class="Wine-Carousel-Dot" data-carousel-dot></span>
+  </div>
 </div>

@@ -1,5 +1,6 @@
 import always from "./always";
 import identity from "./identity";
+import { pipe } from "./Function";
 
 export type Just<T> = { tag: "Just"; value: T };
 export type Nothing = { tag: "Nothing" };
@@ -18,6 +19,13 @@ export const isNothing = <A>(ma: Maybe<A>): ma is Nothing =>
 
 export const map = <A, B>(f: (a: A) => B) => (ma: Maybe<A>): Maybe<B> =>
   isJust(ma) ? just(f(ma.value)) : ma;
+
+export const join = <A>(mma: Maybe<Maybe<A>>): Maybe<A> =>
+  isJust(mma) ? mma.value : mma;
+
+export const chain = <A, B>(
+  f: (a: A) => Maybe<B>,
+): ((ma: Maybe<A>) => Maybe<B>) => pipe(map(f), join);
 
 export const extract = <A, B>(onJust: (a: A) => B, onNothing: () => B) => (
   ma: Maybe<A>,

@@ -8,6 +8,9 @@
     display: none;
   }
 
+  &-Frame {
+  }
+
   &-Item {
     display: none;
     max-width: 100%;
@@ -15,8 +18,36 @@
     border-radius: 10px;
     object-fit: cover;
 
-    &._currentSlide {
+    &._current {
       display: block;
     }
+  }
+
+  &-Frame + &-Dots {
+    margin-top: 25px;
+  }
+
+  &-Dots {
+    display: flex;
+    justify-content: center;
+  }
+
+  &-Dot {
+    position: relative;
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    border: 1px solid var(--black);
+    background-color: transparent;
+    transition: background-color 250ms ease;
+
+    &._current {
+      background-color: var(--black);
+    }
+  }
+
+  &-Dot + &-Dot {
+    margin-left: 10px;
   }
 }

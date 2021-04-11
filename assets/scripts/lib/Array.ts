@@ -18,3 +18,6 @@ export const traversePairs = <A, B>(
 
   return pair(firsts, seconds);
 };
+
+export const findIndex = <A>(p: (a: A) => boolean) => (arr: Array<A>): number =>
+  arr.findIndex(p);
