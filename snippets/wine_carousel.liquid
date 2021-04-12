@@ -6,15 +6,40 @@
       data-carousel-item
     />
 
+    {% if section.settings.image_1_hover != null %}
+      <img
+        class="Wine-Carousel-Item"
+        src="{{ section.settings.image_1_hover | image_url }}"
+        data-carousel-item
+      />
+    {% endif %}
+
     <img
       class="Wine-Carousel-Item"
       src="{{ section.settings.image_2 | image_url }}"
       data-carousel-item
     />
+
+    {% if section.settings.image_2_hover != null %}
+      <img
+        class="Wine-Carousel-Item"
+        src="{{ section.settings.image_2_hover | image_url }}"
+        data-carousel-item
+      />
+    {% endif %}
   </div>
 
   <div class="Wine-Carousel-Dots" data-carousel-dots>
     <span class="Wine-Carousel-Dot _current" data-carousel-dot></span>
+
+    {% if section.settings.image_1_hover != null %}
+      <span class="Wine-Carousel-Dot" data-carousel-dot></span>
+    {% endif %}
+
     <span class="Wine-Carousel-Dot" data-carousel-dot></span>
+
+    {% if section.settings.image_1_hover != null %}
+      <span class="Wine-Carousel-Dot" data-carousel-dot></span>
+    {% endif %}
   </div>
 </div>

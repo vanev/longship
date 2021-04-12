@@ -1,0 +1,11 @@
+{% if hover_url != null %}
+  {% assign hover_swap = hover_url | image_url %}
+{% else %}
+  {% assign hover_swap = "" %}
+{% endif %}
+
+<img
+  class="Wine-Pill"
+  src="{{ url | image_url }}"
+  data-hover-swap="{{ hover_swap }}"
+/>

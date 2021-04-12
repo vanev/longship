@@ -7,6 +7,6 @@ export const select = <E extends Element = Element>(selector: string) => (
 
 export const selectAll = <E extends Element = Element>(selector: string) => (
   el: Element,
-): Array<E> => Array.from(el.querySelectorAll(selector));
+): Array<E> => Array.from(el.querySelectorAll<E>(selector));
 
 export { swipeObservable };

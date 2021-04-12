@@ -13,6 +13,7 @@
 
   {% render "wine_image",
     url: section.settings.image_2,
+    hover_url: section.settings.image_2_hover,
     credit_name: "",
     credit_link: "" %}
 
@@ -22,12 +23,15 @@
 </div>
 
 <div class="Wine-Container _secondary">
-  <img class="Wine-Pill" src="{{ section.settings.pill_image | image_url }}" />
+  {% render "wine_pill",
+    url: section.settings.pill_image,
+    hover_url: section.settings.pill_image_hover %}
 
   {% render "wine_details", section: section %}
 
   {% render "wine_image",
     url: section.settings.image_1,
+    hover_url: section.settings.image_1_hover,
     credit_name: section.settings.image_credit_name,
     credit_link: section.settings.image_credit_link %}
 </div>
@@ -109,15 +113,33 @@
       },
       {
         "type": "image_picker",
+        "id": "image_1_hover",
+        "label": "First Image Hover State",
+        "info": "This is the second image in the carousel and the hover state for the top-most image, next to the name, on desktop."
+      },
+      {
+        "type": "image_picker",
         "id": "image_2",
         "label": "Second Image",
-        "info": "This is the second image in the carousel and the image below the name on desktop."
+        "info": "This is the third image in the carousel and the image below the name on desktop."
+      },
+      {
+        "type": "image_picker",
+        "id": "image_2_hover",
+        "label": "Second Image Hover State",
+        "info": "This is the fourth image in the carousel and the hover state for the image below the name on desktop."
       },
       {
         "type": "image_picker",
         "id": "pill_image",
         "label": "Pill Image",
         "info": "This is the pill image with rounded corners."
+      },
+      {
+        "type": "image_picker",
+        "id": "pill_image_hover",
+        "label": "Pill Image Hover State",
+        "info": "This is the hover state for the pill image with rounded corners."
       },
       {
         "type": "color",

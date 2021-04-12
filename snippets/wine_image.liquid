@@ -1,5 +1,15 @@
+{% if hover_url != null %}
+  {% assign hover_swap = hover_url | image_url %}
+{% else %}
+  {% assign hover_swap = "" %}
+{% endif %}
+
 <div class="Wine-Image">
-  <img class="Wine-Image-Image" src="{{ url | image_url }}" />
+  <img
+    class="Wine-Image-Image"
+    src="{{ url | image_url }}"
+    data-hover-swap="{{ hover_swap }}"
+  />
 
   {% if credit_name != "" %}
     <p class="Wine-Image-Credit">
