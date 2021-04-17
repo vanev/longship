@@ -1,6 +1,7 @@
-import always from "./always";
-import identity from "./identity";
-import { pipe } from "./Function";
+import always from "../always";
+import identity from "../identity";
+import { pipe } from "../Function";
+import all from "./all";
 
 export type Just<T> = { tag: "Just"; value: T };
 export type Nothing = { tag: "Nothing" };
@@ -32,3 +33,5 @@ export const extract = <A, B>(onJust: (a: A) => B, onNothing: () => B) => (
 ): B => (isJust(ma) ? onJust(ma.value) : onNothing());
 
 export const valueOr = <A>(other: A) => extract<A, A>(identity, always(other));
+
+export { all };
