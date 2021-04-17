@@ -13,3 +13,11 @@ export const pipe4 = <A, B, C, D, E>(
   h: (c: C) => D,
   i: (d: D) => E,
 ) => (a: A): E => i(h(g(f(a))));
+
+export const pipe5 = <A, B, C, D, E, F>(
+  f: (a: A) => B,
+  g: (b: B) => C,
+  h: (c: C) => D,
+  i: (d: D) => E,
+  j: (e: E) => F,
+) => (a: A): F => j(i(h(g(f(a)))));
