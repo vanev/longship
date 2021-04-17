@@ -1,4 +1,5 @@
 @import "../../mediaQueries";
+@import "../../typesettings";
 
 .Wine-Description {
   padding: 0 10%;
@@ -18,15 +19,11 @@
   }
 
   &-Text {
-    font-family: var(--type-serif);
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 1.366667;
+    @include body;
     color: var(--black);
     text-align: left;
 
     @include largerThan($mq-small) {
-      font-size: 15px;
       text-align: center;
     }
   }

@@ -1,4 +1,5 @@
 @import "../mediaQueries";
+@import "../typesettings";
 
 .Collection {
   display: grid;
@@ -40,15 +41,8 @@
     }
 
     &-Title {
+      @include body;
       display: block;
-      font-family: var(--type-serif);
-      font-size: 12px;
-      font-weight: 400;
-      line-height: 1.366667;
-
-      @include largerThan($mq-small) {
-        font-size: 15px;
-      }
     }
 
     &-Title + &-Price {
@@ -60,15 +54,8 @@
     }
 
     &-Price {
+      @include price;
       display: block;
-      font-family: var(--type-sans-serif);
-      font-weight: 400;
-      font-size: 10px;
-      letter-spacing: 0.05em;
-
-      @include largerThan($mq-small) {
-        font-size: 12px;
-      }
     }
   }
 

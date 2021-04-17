@@ -1,4 +1,5 @@
 @import "../mediaQueries";
+@import "../typesettings";
 
 .Locate {
   display: flex;
@@ -42,11 +43,8 @@
     cursor: pointer;
 
     &-Name {
-      font-family: var(--type-sans-serif);
-      font-weight: 400;
+      @include detailLabel;
       font-size: 12px;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
     }
 
     &-Name + &-Address {
@@ -54,10 +52,7 @@
     }
 
     &-Address {
-      font-family: "Helvetica", sans-serif;
-      font-weight: 400;
-      font-size: 12px;
-      letter-spacing: 0.05em;
+      @include detailValue;
     }
 
     &-Address + &-Address {

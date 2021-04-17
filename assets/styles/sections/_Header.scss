@@ -1,4 +1,5 @@
 @import "../mediaQueries";
+@import "../typesettings";
 
 .Header {
   position: fixed;
@@ -112,18 +113,10 @@
     }
 
     &-Item {
+      @include nav;
       display: block;
-      font-family: var(--type-sans-serif);
-      font-size: 22px;
-      font-weight: 400;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
       text-decoration: none;
       color: var(--black);
-
-      @include largerThan($mq-small) {
-        font-size: 13px;
-      }
     }
     &-Item + &-Item {
       margin-top: 30px;
@@ -161,25 +154,13 @@
       }
 
       &-Item {
+        @include subNav;
         display: block;
-        font-family: var(--type-serif);
-        font-size: 12px;
-        font-weight: 600;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
         text-decoration: none;
         color: var(--black);
 
         @include largerThan($mq-small) {
           padding: 30px 50px;
-          font-size: 16px;
-          font-weight: 400;
-          letter-spacing: 0;
-
-          &:hover {
-            font-style: italic;
-            font-weight: 600;
-          }
         }
       }
       &-Item + &-Item {

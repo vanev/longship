@@ -1,23 +1,18 @@
+@import "../../typesettings";
+
 .Wine-Details {
   &-Detail {
     padding: 0 10%;
 
     &-Label {
-      font-family: var(--type-sans-serif);
-      font-weight: 400;
-      font-size: 10px;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
+      @include detailLabel;
     }
     &-Label + &-Value {
       margin-top: 8px;
     }
 
     &-Value {
-      font-family: "Helvetica", sans-serif;
-      font-weight: 400;
-      font-size: 10px;
-      letter-spacing: 0.05em;
+      @include detailValue;
     }
   }
   &-Detail + &-Detail {

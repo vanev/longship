@@ -1,4 +1,5 @@
 @import "../../mediaQueries";
+@import "../../typesettings";
 
 .Wine-Years {
   display: flex;
@@ -6,14 +7,7 @@
   padding: 0 10%;
 
   &-Year {
-    font-family: var(--type-serif);
-    font-size: 22px;
-    font-weight: 600;
-    text-transform: uppercase;
-
-    @include largerThan($mq-small) {
-      font-size: 31px;
-    }
+    @include heading;
   }
   &-Year + &-Year {
     padding-left: 20px;

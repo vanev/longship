@@ -1,4 +1,5 @@
 @import "../../mediaQueries";
+@import "../../typesettings";
 
 .Wine-Image {
   display: none;
@@ -36,14 +37,11 @@
     }
 
     &-Label {
-      font-family: var(--type-sans-serif);
-      font-size: 10px;
-      text-transform: uppercase;
+      @include creditLabel;
     }
 
     &-Name {
-      font-family: var(--type-serif);
-      font-size: 10px;
+      @include creditValue;
       color: inherit;
     }
   }
