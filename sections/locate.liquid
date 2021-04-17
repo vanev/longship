@@ -1,0 +1,96 @@
+<div
+  class="Locate-Map"
+  data-locate-map
+  data-api-key="{{ section.settings.google_maps_api_key }}"
+  data-pin-src="{{ section.settings.pin | image_url }}"
+>
+  <p class="Locate-Map-Message">Loading...</p>
+</div>
+
+<div class="Locate-List" data-locate-list>
+  {% for block in section.blocks %}
+    <div
+      class="Locate-Location"
+      {{ block.shopify_attributes }}
+      data-location
+      data-latitude="{{ block.settings.latitude }}"
+      data-longitude="{{ block.settings.longitude }}"
+    >
+      <p class="Locate-Location-Name">{{ block.settings.name }}</p>
+      <p class="Locate-Location-Address">{{ block.settings.street_address }}</p>
+      <p class="Locate-Location-Address">{{ block.settings.city }}, {{ block.settings.zip }}</p>
+    </div>
+  {% endfor %}
+</div>
+
+{% schema %}
+  {
+    "name": "Locate",
+    "class": "Locate",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "google_maps_api_key",
+        "label": "Google Maps API Key",
+        "info": "We need a valid API key to render a Google Maps map."
+      },
+      {
+        "type": "image_picker",
+        "id": "pin",
+        "label": "Pin"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "location",
+        "name": "Location",
+        "settings": [
+          {
+            "type": "text",
+            "id": "name",
+            "label": "Name"
+          },
+          {
+            "type": "text",
+            "id": "street_address",
+            "label": "Street Address",
+            "placeholder": "123 Fake St."
+          },
+          {
+            "type": "text",
+            "id": "city",
+            "label": "City",
+            "placeholder": "Fake City"
+          },
+          {
+            "type": "text",
+            "id": "state",
+            "label": "State",
+            "placeholder": "NY"
+          },
+          {
+            "type": "text",
+            "id": "zip",
+            "label": "Zip Code",
+            "placeholder": "12345"
+          },
+          {
+            "type": "text",
+            "id": "latitude",
+            "label": "Latitude"
+          },
+          {
+            "type": "text",
+            "id": "longitude",
+            "label": "Longitude"
+          }
+        ]
+      }
+    ],
+    "presets": [{
+      "name": "Locate",
+      "category": "Locate"
+    }]
+  }
+{% endschema %}

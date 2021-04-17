@@ -1,0 +1,67 @@
+@import "../mediaQueries";
+
+.Locate {
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+  width: 100vw;
+  height: calc(100vh - 71px - 36px);
+
+  @include largerThan($mq-small) {
+    flex-direction: row;
+    height: calc(100vh - 81px - 110px);
+  }
+
+  &-Map {
+    width: 100%;
+    height: 50%;
+
+    @include largerThan($mq-small) {
+      width: 75%;
+      height: 100%;
+    }
+  }
+
+  &-List {
+    overflow-y: scroll;
+    width: 100%;
+    height: 50%;
+    border-top: 1px solid var(--black);
+
+    @include largerThan($mq-small) {
+      width: 25%;
+      height: 100%;
+      border-top: none;
+      border-left: 1px solid var(--black);
+    }
+  }
+
+  &-Location {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--black);
+    cursor: pointer;
+
+    &-Name {
+      font-family: var(--type-sans-serif);
+      font-weight: 400;
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    &-Name + &-Address {
+      margin-top: 0.5rem;
+    }
+
+    &-Address {
+      font-family: "Helvetica", sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      letter-spacing: 0.05em;
+    }
+
+    &-Address + &-Address {
+      margin-top: 0.25rem;
+    }
+  }
+}
