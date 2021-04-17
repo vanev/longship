@@ -4,3 +4,4 @@ node_modules
 /assets/application.js
 /assets/application.js.map
 .parcel-cache
+*.log
