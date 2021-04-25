@@ -1,14 +1,37 @@
-<h1>{{ page.title }}</h1>
-{% form 'contact' %}
-  {% if form.posted_successfully? %} Thank you for your contact {% endif %}
-  {{ form.errors | default_errors }}
-  <label for="ContactFormName">name</label>
-  <input type="text" id="ContactFormName" name="contact[name]">
-  <label for="ContactFormEmail">email</label>
-  <input type="email" id="ContactFormEmail" name="contact[email]">
-  <label for="ContactFormPhone">phone</label>
-  <input type="tel" id="ContactFormPhone" name="contact[phone]">
-  <label for="ContactFormMessage">message</label>
-  <textarea rows="10" id="ContactFormMessage" name="contact[body]"></textarea>
-  <input type="submit" value="send">
-{% endform %}
+<div class="Page">
+  <h1 class="Page-Title">{{ page.title }}</h1>
+
+  {% form 'contact', class: "Page-Form" %}
+    {% if form.posted_successfully? %}
+      <p class="Page-Form-Message">
+        Thank you for your contact
+      </p>
+    {% endif %}
+
+    {% if form.errors %}
+      {{ form.errors | default_errors }}
+    {% endif %}
+
+    <div class="Page-Form-Field">
+      <label class="Page-Form-Label" for="ContactFormName">name</label>
+      <input class="Page-Form-Control" type="text" id="ContactFormName" name="contact[name]">
+    </div>
+
+    <div class="Page-Form-Field">
+      <label class="Page-Form-Label" for="ContactFormEmail">email</label>
+      <input class="Page-Form-Control" type="email" id="ContactFormEmail" name="contact[email]">
+    </div>
+
+    <div class="Page-Form-Field">
+      <label class="Page-Form-Label" for="ContactFormPhone">phone</label>
+      <input class="Page-Form-Control" type="tel" id="ContactFormPhone" name="contact[phone]">
+    </div>
+
+    <div class="Page-Form-Field">
+      <label class="Page-Form-Label" for="ContactFormMessage">message</label>
+      <textarea class="Page-Form-Control" rows="10" id="ContactFormMessage" name="contact[body]"></textarea>
+    </div>
+
+    <input class="Page-Form-Button" type="submit" value="send">
+  {% endform %}
+</div>
