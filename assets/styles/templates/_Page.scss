@@ -1,15 +1,39 @@
 @import "../typesettings";
 
 .Page {
-  padding: 1.875rem 5%;
+  padding: 5rem 5%;
+  max-width: 30rem;
+  margin: 0 auto;
 
   &-Title {
     @include heading;
     text-align: center;
   }
 
+  &-Title + &-Body {
+    margin-top: 2.5rem;
+  }
+
   &-Title + &-Form {
-    margin-top: 1.875rem;
+    margin-top: 2.5rem;
+  }
+
+  &-Body {
+    @include body;
+    text-align: center;
+
+    strong {
+      text-transform: uppercase;
+    }
+
+    p + p {
+      margin-top: 1.875rem;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
   }
 
   &-Form {
