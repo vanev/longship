@@ -2,17 +2,21 @@
 @import "../typesettings";
 
 .Collection {
-  display: grid;
-  grid-template-columns: 1fr;
-  padding: 12vw 10vw;
-  max-width: 64rem;
-  margin: 0 auto;
+  background: var(--black);
 
-  @include largerThan($mq-small) {
-    padding: 3.5rem 0;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 2.75rem;
-    row-gap: 2.75rem;
+  &-Container {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 12vw 10vw;
+    max-width: 64rem;
+    margin: 0 auto;
+
+    @include largerThan($mq-small) {
+      padding: 3.5rem 0;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 2.75rem;
+      row-gap: 2.75rem;
+    }
   }
 
   &-Item {
@@ -20,7 +24,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    color: var(--black);
+    color: var(--white);
     text-decoration: none;
 
     @include largerThan($mq-small) {

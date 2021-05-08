@@ -1,32 +1,34 @@
 <div class="Collection">
-  {% paginate collection.products by 6 %}
-    {% for product in collection.products %}
-      <a
-        class="Collection-Item"
-        href="{{ product.url | within: collection }}"
-      >
-        <img
-          class="Collection-Item-Image"
-          src="{{ product.featured_image.src | img_url: 'large' }}"
-          alt="{{ product.featured_image.alt | escape }}"
-        />
+  <div class="Collection-Container">
+    {% paginate collection.products by 6 %}
+      {% for product in collection.products %}
+        <a
+          class="Collection-Item"
+          href="{{ product.url | within: collection }}"
+        >
+          <img
+            class="Collection-Item-Image"
+            src="{{ product.featured_image.src | img_url: 'large' }}"
+            alt="{{ product.featured_image.alt | escape }}"
+          />
 
-        <span class="Collection-Item-Title">
-          {{ product.title }}
-        </span>
+          <span class="Collection-Item-Title">
+            {{ product.title }}
+          </span>
 
-        <span class="Collection-Item-Price">
-          {{ product.price | money }}
-        </span>
-      </a>
-    {% else %}
-      <p class="Collection-EmptyMessage">
-        No Products Found
-      </p>
-    {% endfor %}
+          <span class="Collection-Item-Price">
+            {{ product.price | money }}
+          </span>
+        </a>
+      {% else %}
+        <p class="Collection-EmptyMessage">
+          No Products Found
+        </p>
+      {% endfor %}
 
-    {% if paginate.pages > 1 %}
-      {{ paginate | default_pagination }}
-    {% endif %}
-  {% endpaginate %}
+      {% if paginate.pages > 1 %}
+        {{ paginate | default_pagination }}
+      {% endif %}
+    {% endpaginate %}
+  </div>
 </div>
