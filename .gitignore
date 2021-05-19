@@ -5,3 +5,4 @@ node_modules
 /assets/application.js.map
 .parcel-cache
 *.log
+longship.zip

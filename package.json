@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "concurrently -c 'white' 'npm:*:watch'",
+    "build": "yarn sass:build && yarn scripts:build && zip -X longship.zip assets/application.css.liquid assets/application.js assets/application.js.map assets/*.woff assets/*.woff2 config/* layout/* locales/* sections/* snippets/* templates/* templates/**/*",
     "sass:build": "sass ./assets/styles/application.scss ./assets/application.css.liquid --no-source-map",
     "sass:watch": "yarn sass:build --watch",
     "theme:watch": "theme watch --allow-live",
