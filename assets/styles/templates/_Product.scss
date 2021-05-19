@@ -1,0 +1,122 @@
+@import "../mediaQueries";
+@import "../typesettings";
+
+.Product {
+  background: var(--black);
+  color: var(--white);
+  min-height: calc(100vh - 71px - 36px);
+
+  @include largerThan($mq-small) {
+    min-height: calc(100vh - 81px - 110px);
+  }
+
+  &-Container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 12vw 10vw;
+    max-width: 32rem;
+    margin: 0 auto;
+
+    @include largerThan($mq-small) {
+      padding: 3.5rem 0;
+    }
+  }
+
+  &-Image {
+    width: 100%;
+  }
+
+  &-Image + &-Title,
+  &-Title + &-Price {
+    margin-top: 2rem;
+  }
+
+  &-Title {
+    @include body;
+  }
+
+  &-Price {
+    @include price;
+  }
+
+  &-Price + &-Form {
+    margin-top: 1rem;
+  }
+
+  &-Form {
+    width: 100%;
+
+    &-Field {
+    }
+
+    &-Field + &-Field {
+      margin-top: 1rem;
+    }
+
+    &-Label {
+      @include detailLabel;
+      display: block;
+      text-align: left;
+    }
+
+    &-Label + &-Control {
+      margin-top: 0.5rem;
+    }
+
+    &-Control {
+      @include detailValue;
+      display: block;
+      box-sizing: border-box;
+      padding: 0.25rem;
+      width: 100%;
+      max-width: 300px;
+      border: 1px solid var(--white);
+      color: var(--white);
+      background: none;
+      appearance: none;
+      outline: 0;
+
+      &._number {
+        border: none;
+      }
+
+      &-Button {
+        @include detailValue;
+        display: inline-block;
+        box-sizing: border-box;
+        padding: 0.25rem 1rem;
+        max-width: 300px;
+        border: 1px solid var(--white);
+        color: var(--white);
+        background: none;
+        appearance: none;
+        outline: 0;
+        cursor: pointer;
+      }
+
+      &-Button + &-Display,
+      &-Display + &-Button {
+        margin-left: 1rem;
+      }
+
+      &-Display {
+      }
+    }
+
+    &-Field + &-Button {
+      margin-top: 1rem;
+    }
+
+    &-Button {
+      @include action;
+      padding: 0.75rem 1rem;
+      border: none;
+      border-radius: 0.25rem;
+      margin: 0 auto;
+      background: var(--purple);
+      color: var(--white);
+      cursor: pointer;
+    }
+  }
+}

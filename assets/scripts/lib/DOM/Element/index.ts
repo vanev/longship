@@ -1,5 +1,6 @@
 import { Maybe, maybe } from "../../Maybe";
 import swipeObservable from "./swipeObservable";
+import clickObservable from "./clickObservable";
 
 export const select = <E extends Element = Element>(selector: string) => (
   el: Element,
@@ -12,4 +13,4 @@ export const selectAll = <E extends Element = Element>(selector: string) => (
 export const attr = (name: string) => (el: Element): Maybe<string> =>
   maybe(el.getAttribute(name));
 
-export { swipeObservable };
+export { clickObservable, swipeObservable };

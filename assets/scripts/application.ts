@@ -6,6 +6,7 @@ import * as BackgroundColorChanger from "./BackgroundColorChanger";
 import * as WineCarousel from "./WineCarousel";
 import * as ImageHoverSwap from "./ImageHoverSwap";
 import * as LocateSection from "./LocateSection";
+import * as NumberInput from "./NumberInput";
 
 const wineEls = selectAll<HTMLElement>("section.Wine")(window.document);
 
@@ -32,3 +33,9 @@ Promise.all(map(LocateSection.initialize)(locateEls))
   .catch((reason) => {
     console.error(reason);
   });
+
+const numberInputEls = selectAll<HTMLElement>("[data-number-input]")(
+  window.document,
+);
+
+map(NumberInput.initialize)(numberInputEls);

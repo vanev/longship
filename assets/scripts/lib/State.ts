@@ -14,6 +14,7 @@ export const state = <T>(initial: T): State<T> => {
   };
 
   const observable: Observable<T> = (observer) => {
+    observer(value);
     observers.push(observer);
   };
 

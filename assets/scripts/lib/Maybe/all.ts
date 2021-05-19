@@ -71,6 +71,7 @@ function all<T1, T2, T3>(
 ): Maybe<[T1, T2, T3]>;
 function all<T1, T2>(values: readonly [Maybe<T1>, Maybe<T2>]): Maybe<[T1, T2]>;
 function all<T1>(values: readonly [Maybe<T1>]): Maybe<[T1]>;
+function all<T1>(values: Array<Maybe<T1>>): Maybe<Array<T1>>;
 function all(results: any) {
   let finalMaybe: Maybe<any> = just([]);
 

@@ -3,6 +3,11 @@
 
 .Collection {
   background: var(--black);
+  min-height: calc(100vh - 71px - 36px);
+
+  @include largerThan($mq-small) {
+    min-height: calc(100vh - 81px - 110px);
+  }
 
   &-Container {
     display: grid;

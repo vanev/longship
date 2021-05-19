@@ -12,3 +12,10 @@ export const filter = <A>(predicate: (a: A) => boolean) => (
   oea((a) => {
     if (predicate(a)) observer(a);
   });
+
+export const observe = <A>(observer: Observer<A>) => (
+  observable: Observable<A>,
+): Observable<A> => {
+  observable(observer);
+  return observable;
+};
