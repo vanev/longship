@@ -26,13 +26,7 @@ map(ImageHoverSwap.initialize)(imageHoverSwapEls);
 
 const locateEls = selectAll<HTMLElement>("section.Locate")(window.document);
 
-Promise.all(map(LocateSection.initialize)(locateEls))
-  .then((value) => {
-    console.log(value);
-  })
-  .catch((reason) => {
-    console.error(reason);
-  });
+map(LocateSection.initialize)(locateEls);
 
 const numberInputEls = selectAll<HTMLElement>("[data-number-input]")(
   window.document,
