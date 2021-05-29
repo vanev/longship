@@ -5,6 +5,8 @@ import { extract } from "./lib/Maybe";
 export type WineSection = {
   rootElement: HTMLElement;
   color: string;
+  id: string;
+  name: string;
 };
 
 const extractColor = extract<HTMLInputElement, string>(
@@ -12,14 +14,25 @@ const extractColor = extract<HTMLInputElement, string>(
   always("#ffffff"),
 );
 
+const extractName = extract<HTMLInputElement, string>(
+  (element) => element.value,
+  always("Unknown"),
+);
+
 export const fromElement = (rootElement: HTMLElement): WineSection => {
-  const selector = "[data-attr='background']";
-  const backgroundEl = select<HTMLInputElement>(selector)(rootElement);
+  const id = rootElement.id;
+  const backgroundEl = select<HTMLInputElement>("[data-attr='background']")(
+    rootElement,
+  );
   const color = extractColor(backgroundEl);
+  const nameEl = select<HTMLInputElement>("[data-attr='name']")(rootElement);
+  const name = extractName(nameEl);
 
   return {
     rootElement,
     color,
+    id,
+    name,
   };
 };
 
