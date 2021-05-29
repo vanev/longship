@@ -12,10 +12,6 @@
 
   &-Rune + &-Text {
     margin-top: 40px;
-
-    @include largerThan($mq-small) {
-      margin-top: 130px;
-    }
   }
 
   &-Text {
