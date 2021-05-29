@@ -1,6 +1,6 @@
 {
   "name": "longship",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "./assets/application.js",
   "author": "Evan Siegel <siegel.evan@gmail.com>",
   "license": "MIT",
