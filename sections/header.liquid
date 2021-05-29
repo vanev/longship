@@ -4,33 +4,9 @@
 <nav class="Header-Menus">
   <div class="Header-MainMenu _left">
     {% for link in linklists.header-left.links %}
-      {% assign submenu_handle = link.title | handleize %}
-
-      {% if linklists[submenu_handle].links != blank %}
-        <div href="{{ link.url }}" class="Header-MainMenu-Item _submenu">
-          <input
-            type="checkbox"
-            class="Header-MainMenu-SubmenuToggle"
-            id="header_submenu_{{ submenu_handle }}_toggle"
-          />
-
-          <label class="Header-MainMenu-SubmenuLabel" for="header_submenu_{{ submenu_handle }}_toggle">
-            {{ link.title | escape }}
-          </label>
-
-          <div class="Header-MainMenu-Submenu">
-            {% for childlink in linklists[submenu_handle].links %}
-              <a href="{{ childlink.url }}" class="Header-MainMenu-Submenu-Item">
-                {{ childlink.title | escape }}
-              </a>
-            {% endfor %}
-          </div>
-        </div>
-      {% else %}
-        <a href="{{ link.url }}" class="Header-MainMenu-Item">
-          {{ link.title | escape }}
-        </a>
-      {% endif %}
+      <a href="{{ link.url }}" class="Header-MainMenu-Item">
+        {{ link.title | escape }}
+      </a>
     {% endfor %}
   </div>
 

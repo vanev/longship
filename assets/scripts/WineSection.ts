@@ -7,6 +7,7 @@ export type WineSection = {
   color: string;
   id: string;
   name: string;
+  menuHoverImage: string;
 };
 
 const extractColor = extract<HTMLInputElement, string>(
@@ -27,12 +28,17 @@ export const fromElement = (rootElement: HTMLElement): WineSection => {
   const color = extractColor(backgroundEl);
   const nameEl = select<HTMLInputElement>("[data-attr='name']")(rootElement);
   const name = extractName(nameEl);
+  const menuHoverImageEl = select<HTMLInputElement>(
+    "[data-attr='menu-hover-image']",
+  )(rootElement);
+  const menuHoverImage = extractName(menuHoverImageEl);
 
   return {
     rootElement,
     color,
     id,
     name,
+    menuHoverImage,
   };
 };
 

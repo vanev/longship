@@ -117,6 +117,7 @@
       display: block;
       text-decoration: none;
       color: var(--black);
+      cursor: pointer;
     }
     &-Item + &-Item {
       margin-top: 30px;
@@ -161,6 +162,23 @@
 
         @include largerThan($mq-small) {
           padding: 30px 50px;
+        }
+
+        &-Image {
+          position: fixed;
+          top: 130px;
+          left: 50%;
+          display: none;
+          width: 430px;
+          height: 430px;
+          object-fit: contain;
+          transform: translateX(-50%);
+        }
+
+        &:hover {
+          .Header-MainMenu-Submenu-Item-Image {
+            display: block;
+          }
         }
       }
       &-Item + &-Item {
