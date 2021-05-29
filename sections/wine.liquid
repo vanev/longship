@@ -16,8 +16,8 @@
   {% render "wine_image",
     url: section.settings.image_2,
     hover_url: section.settings.image_2_hover,
-    credit_name: "",
-    credit_link: "" %}
+    credit_name: section.settings.image_2_credit_name,
+    credit_link: section.settings.image_2_credit_link %}
 
   {% render "wine_carousel", section: section %}
 
@@ -34,8 +34,8 @@
   {% render "wine_image",
     url: section.settings.image_1,
     hover_url: section.settings.image_1_hover,
-    credit_name: section.settings.image_credit_name,
-    credit_link: section.settings.image_credit_link %}
+    credit_name: section.settings.image_1_credit_name,
+    credit_link: section.settings.image_1_credit_link %}
 </div>
 
 {% schema %}
@@ -125,6 +125,18 @@
         "info": "This is the second image in the carousel and the hover state for the top-most image, next to the name, on desktop."
       },
       {
+        "type": "text",
+        "id": "image_1_credit_name",
+        "label": "Image Credit Name",
+        "info": "Optional"
+      },
+      {
+        "type": "text",
+        "id": "image_1_credit_link",
+        "label": "Image Credit Link",
+        "info": "Optional"
+      },
+      {
         "type": "image_picker",
         "id": "image_2",
         "label": "Second Image",
@@ -135,6 +147,18 @@
         "id": "image_2_hover",
         "label": "Second Image Hover State",
         "info": "This is the fourth image in the carousel and the hover state for the image below the name on desktop."
+      },
+      {
+        "type": "text",
+        "id": "image_2_credit_name",
+        "label": "Image Credit Name",
+        "info": "Optional"
+      },
+      {
+        "type": "text",
+        "id": "image_2_credit_link",
+        "label": "Image Credit Link",
+        "info": "Optional"
       },
       {
         "type": "image_picker",
@@ -153,18 +177,6 @@
         "id": "image_hover_shadow",
         "label": "Image Hover Shadow Color",
         "info": "This is the color of the box shadow that appears when hovering an image with a mouse."
-      },
-      {
-        "type": "text",
-        "id": "image_credit_name",
-        "label": "Image Credit Name",
-        "info": "Optional"
-      },
-      {
-        "type": "text",
-        "id": "image_credit_link",
-        "label": "Image Credit Link",
-        "info": "Optional"
       }
     ],
     "presets": [{
