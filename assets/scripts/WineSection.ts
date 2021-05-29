@@ -25,16 +25,17 @@ export const fromElement = (rootElement: HTMLElement): WineSection => {
 
 export const color = (section: WineSection): string => section.color;
 
-export const weight = (viewportHeight: number) => (
-  section: WineSection,
-): number => {
-  const { top, bottom, height } = section.rootElement.getBoundingClientRect();
+export const weight =
+  (viewportHeight: number) =>
+  (section: WineSection): number => {
+    const { top, bottom, height } = section.rootElement.getBoundingClientRect();
 
-  if (bottom <= 0 || top >= viewportHeight) return 0;
+    if (bottom <= 0 || top >= viewportHeight) return 0;
 
-  if (top <= 0) return bottom / viewportHeight;
+    if (top <= 0) return bottom / viewportHeight;
 
-  if (bottom >= viewportHeight) return (viewportHeight - top) / viewportHeight;
+    if (bottom >= viewportHeight)
+      return (viewportHeight - top) / viewportHeight;
 
-  return height / viewportHeight;
-};
+    return height / viewportHeight;
+  };
