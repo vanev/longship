@@ -11,6 +11,10 @@
   --type-serif: "gc16", serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   display: flex;
   flex-direction: column;
