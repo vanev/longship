@@ -119,4 +119,12 @@
       cursor: pointer;
     }
   }
+
+  &-Form + &-Description {
+    margin-top: 1rem;
+  }
+
+  &-Description {
+    @include body;
+  }
 }
