@@ -42,6 +42,10 @@
     border-bottom: 1px solid var(--black);
     cursor: pointer;
 
+    &._active {
+      background-color: white;
+    }
+
     &-Name {
       @include detailLabel;
       font-size: 12px;
