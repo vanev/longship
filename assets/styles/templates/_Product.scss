@@ -27,8 +27,21 @@
     width: 100%;
   }
 
+  &-Image + &-Thumbnails {
+    margin-top: 1rem;
+  }
+
+  &-Thumbnails {
+    width: 100%;
+  }
+
+  &-Thumbnail {
+    cursor: zoom-in;
+  }
+
   &-Image + &-Title,
-  &-Title + &-Price {
+  &-Title + &-Price,
+  &-Thumbnails + &-Title {
     margin-top: 2rem;
   }
 

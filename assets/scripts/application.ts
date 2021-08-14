@@ -9,6 +9,7 @@ import * as ImageHoverSwap from "./ImageHoverSwap";
 import * as LocateSection from "./LocateSection";
 import * as NumberInput from "./NumberInput";
 import * as WinesHeaderSubmenu from "./WinesHeaderSubmenu";
+import * as Gallery from "./Gallery";
 
 const wineEls = selectAll<HTMLElement>("section.Wine")(window.document);
 
@@ -47,3 +48,7 @@ const numberInputEls = selectAll<HTMLElement>("[data-number-input]")(
 );
 
 map(NumberInput.initialize)(numberInputEls);
+
+const galleryEls = selectAll<HTMLElement>("[data-gallery]")(window.document);
+
+map(Gallery.initialize)(galleryEls);
